@@ -30,6 +30,8 @@
 
 
 
+<script src="/js/lib/search.js"></script>
+
 
 
 <link rel="stylesheet" href="/css/main.css" />
@@ -142,6 +144,8 @@
                 
 <div id="archives">
     
+    <input id="search-bar" class="input" placeholder="搜索" v-model="rawSearch" />
+    
     <div id="timeline-wrap" ref="timeline">
         
         <div class="timeline" data-title="helloworld">
@@ -182,11 +186,11 @@
                 <div class="info">
                     
                     <span class="category">
-                        <a href="/categories/%E5%B9%BB%E6%A2%A6%E8%87%B3%E5%AE%9E/">
+                        <a href="/categories/%E5%B9%BB%E6%A2%A6-%E8%87%B3%E5%AE%9E/">
                             <span class="icon">
                                 <i class="fa-solid fa-bookmark fa-fw"></i>
                             </span>
-                            幻梦至实
+                            幻梦-至实
                         </a>
                     </span>
                     
