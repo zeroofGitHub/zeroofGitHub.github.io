@@ -1,255 +1,32 @@
+extends includes/layout.pug
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>幻梦至实 | Hexo</title>
-        <meta name="author" content="John Doe" />
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
-        <link rel="icon" href="/images/avatar.jpg" />
-        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
-<link rel="stylesheet" href="/css/fonts.min.css" />
-<script> const mixins = {}; </script>
+block content
+  #post
+    if top_img === false
+      include includes/header/post-info.pug
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-
-<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
-<link
-    rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
-/>
-<script src="/js/lib/highlight.js"></script>
-
-
-
-<script src="/js/lib/preview.js"></script>
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/css/main.css" />
-
-    <meta name="generator" content="Hexo 6.3.0"></head>
-    <body>
-        <div id="layout">
-            <transition name="fade">
-            <div id="loading" v-show="loading">
-                <div id="loading-circle">
-                    <h2>LOADING</h2>
-                    <p>加载过慢请开启缓存 浏览器默认开启</p>
-                    <img src="/images/loading.gif" />
-                </div>
-            </div>
-            </transition>
-            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
-    <div class="desktop-menu">
-        <a class="title" href="/">
-            <span>HEXO</span>
-        </a>
+    article#article-container.post-content!=page.content
+    include includes/post/post-copyright.pug
+    .tag_share
+      if (theme.post_meta.post.tags)
+        .post-meta__tag-list
+          each item, index in page.tags.data
+            a(href=url_for(item.path)).post-meta__tags #[=item.name]
+      include includes/third-party/share/index.pug
         
-        <a href="/">
-            <i class="fa-solid fa-house fa-fw"></i>
-            <span>&ensp;Home(主页)</span>
-        </a>
-        
-        <a href="/about">
-            <i class="fa-solid fa-id-card fa-fw"></i>
-            <span>&ensp;About(关于我的个人信息)</span>
-        </a>
-        
-        <a href="/archives">
-            <i class="fa-solid fa-box-archive fa-fw"></i>
-            <span>&ensp;Archives(文章)</span>
-        </a>
-        
-        <a href="/categories">
-            <i class="fa-solid fa-bookmark fa-fw"></i>
-            <span>&ensp;Categories(分类)</span>
-        </a>
-        
-        <a href="/tags">
-            <i class="fa-solid fa-tags fa-fw"></i>
-            <span>&ensp;Tags(标签)</span>
-        </a>
-        
-    </div>
-    <div id="mobile-menu">
-        <div class="curtain" @click="shouMenuItems = !shouMenuItems" v-show="shouMenuItems"></div>
-        <div class="title" @click="shouMenuItems = !shouMenuItems">
-            <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;HEXO</span>
-        </div>
-        <transition name="slide">
-        <div class="items" v-show="shouMenuItems">
-            
-            <a href="/">
-                <div class="item">
-                    <div style="min-width: 20px; max-width: 50px; width: 10%">
-                        <i class="fa-solid fa-house fa-fw"></i>
-                    </div>
-                    <div style="min-width: 100px; max-width: 150%; width: 20%">Home(主页)</div>
-                </div>
-            </a>
-            
-            <a href="/about">
-                <div class="item">
-                    <div style="min-width: 20px; max-width: 50px; width: 10%">
-                        <i class="fa-solid fa-id-card fa-fw"></i>
-                    </div>
-                    <div style="min-width: 100px; max-width: 150%; width: 20%">About(关于我的个人信息)</div>
-                </div>
-            </a>
-            
-            <a href="/archives">
-                <div class="item">
-                    <div style="min-width: 20px; max-width: 50px; width: 10%">
-                        <i class="fa-solid fa-box-archive fa-fw"></i>
-                    </div>
-                    <div style="min-width: 100px; max-width: 150%; width: 20%">Archives(文章)</div>
-                </div>
-            </a>
-            
-            <a href="/categories">
-                <div class="item">
-                    <div style="min-width: 20px; max-width: 50px; width: 10%">
-                        <i class="fa-solid fa-bookmark fa-fw"></i>
-                    </div>
-                    <div style="min-width: 100px; max-width: 150%; width: 20%">Categories(分类)</div>
-                </div>
-            </a>
-            
-            <a href="/tags">
-                <div class="item">
-                    <div style="min-width: 20px; max-width: 50px; width: 10%">
-                        <i class="fa-solid fa-tags fa-fw"></i>
-                    </div>
-                    <div style="min-width: 100px; max-width: 150%; width: 20%">Tags(标签)</div>
-                </div>
-            </a>
-            
-        </div>
-        </transition>
-    </div>
-</nav>
+    if theme.reward.enable && theme.reward.QR_code
+      !=partial('includes/post/reward', {}, {cache: true})
 
-            <transition name="into">
-            <div id="main" v-show="!loading">
-                <div class="article">
-    <div>
-        <h1>幻梦至实</h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/4/5
-        </span>
-        
-        <span class="category">
-            <a href="/categories/%E5%B9%BB%E6%A2%A6-%E8%87%B3%E5%AE%9E/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                幻梦-至实
-            </a>
-        </span>
-        
-        
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/%E5%A4%A7%E7%BA%B2/" style="color: #ffa2c4">大纲</a>
-            </span>
-            
-        </span>
-        
-    </div>
-    
-    <div class="content" v-pre>
-        <h1 id="幻梦至实"><a href="#幻梦至实" class="headerlink" title="幻梦至实"></a>幻梦至实</h1><p>​                                                                   在 幻梦 中与过去谅解，在 现实 中与未来相容——zero</p>
-<hr>
-<p>[TOC]</p>
-<h2 id="幻梦篇-第一章-苦痛所编织成的永世幻梦"><a href="#幻梦篇-第一章-苦痛所编织成的永世幻梦" class="headerlink" title="幻梦篇 第一章 苦痛所编织成的永世幻梦"></a>幻梦篇 第一章 苦痛所编织成的永世幻梦</h2><h3 id="第一幕-那做过千百次的幻梦"><a href="#第一幕-那做过千百次的幻梦" class="headerlink" title="第一幕 那做过千百次的幻梦"></a>第一幕 那做过千百次的幻梦</h3><ol>
-<li>缚祇 端坐在大厅中，反复看着那张看过了千百次略微泛黄且沾上血迹的照片，思绪回到十年前</li>
-<li>那时的 缚祇 无力的看着 雾炙 晓斗 的逝去</li>
-<li>过了如此久 缚祇 却仍然无法释怀 </li>
-<li>良久</li>
-<li>缚祇 披上了披风走出了房门</li>
-<li>无论代价是什么 缚祇 已然决定着前往那处参加最后的庆典旅行</li>
-<li>缚祇 要参加这场旅行与这破碎的世界来个了断（即在这场名为旅行，实则为 幻梦 计划）</li>
-</ol>
-<h3 id="第二幕-一切的起点，梦结束的地方"><a href="#第二幕-一切的起点，梦结束的地方" class="headerlink" title="第二幕 一切的起点，梦结束的地方"></a>第二幕 一切的起点，梦结束的地方</h3><ol>
-<li>被记忆删除的缚祇 来到幻梦中 （在此之前 缚祇 已经在自己的思维上编写了一套程序 （在 缚祇 的记忆被删除的一瞬间 这个程序会把删除的记忆移动到程序的最底层去 且由于这个后门仅仅是一个符号的改变且仅仅是在上千亿条代码中一行错误的代码 so 几乎无人会发现））</li>
-<li>缚祇遇到了 雾炙 晓斗（男主（绝对之历史）） 双方都有一股熟悉的感觉但都由于清除了记忆所以 谁都没认出谁（但是缚祇有种预感，有一天我们必将兵戎相见）</li>
-<li>二人在闲聊时碰到了 残星（禁忌之医）、墨蝎~咏昼（魔能器械使徒） 二人 墨蝎看着你的手臂出神（上面明明有着独属于他的标记，但是自己却没有这段记忆）且 残星 似乎与 雾炙 晓斗 十分熟悉</li>
-<li>残星、墨蝎并没有跟随着 缚祇二人 缚祇 在探索这个 泪城。接下来由你来决定下一步前往何处</li>
-<li>酒馆（温迪（风之语者）</li>
-<li>杂货铺（烁光）</li>
-<li>突然间 天晴了 众人发现那座本毁于十年决战的大楼如同海市蜃楼般一样出现在了原地 你看见了烁光的目光逐渐呆滞了，你看着那座大楼，好像再次回到了那个时间，看见了他……</li>
-</ol>
-<h3 id="第三幕-高塔之下，我所见到的只剩恐惧"><a href="#第三幕-高塔之下，我所见到的只剩恐惧" class="headerlink" title="第三幕 高塔之下，我所见到的只剩恐惧"></a>第三幕 高塔之下，我所见到的只剩恐惧</h3><ol>
-<li>众人来到了高塔处，</li>
-</ol>
+    //- ad
+    if theme.ad && theme.ad.post
+      .ads-wrap!=theme.ad.post
 
-    </div>
-    
-    
-    
-    
-    
-    
-    
-</div>
+    if theme.post_pagination
+      include includes/pagination.pug
+    if theme.related_post && theme.related_post.enable
+      != related_posts(page,site.posts)
 
-                <footer id="footer">
-    <div id="footer-wrap">
-        <div>
-            &copy;
-            2022 - 2023 Hexo
-            <span id="footer-icon">
-                <i class="fa-solid fa-font-awesome fa-fw"></i>
-            </span>
-            &commat;John Doe
-        </div>
-        <div>
-            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
-            <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a>
-        </div>
-        
-    </div>
-</footer>
-
-            </div>
-            </transition>
-            
-            <transition name="fade">
-            <div id="preview" ref="preview" v-show="previewShow">
-                <img id="preview-content" ref="previewContent" />
-            </div>
-            </transition>
-            
-        </div>
-        <script src="/js/main.js"></script>
-        
-        
-
-
-
-
-        
-    </body>
-</html>
+    if page.comments !== false && theme.comments && theme.comments.use
+      - var commentsJsLoad = true
+      !=partial('includes/third-party/comments/index', {}, {cache: true})
+      
