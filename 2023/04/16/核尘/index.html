@@ -1,32 +1,185 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>核尘 | 闪宝的快乐小屋</title><meta name="author" content="shan_bao"><meta name="copyright" content="shan_bao"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="核尘 [TOC]  那次事件后什么都变了，然而可怕的是，人性是不会变的。 ——  AI世界观前核子时代公元2035年1月1日，日本广岛午夜 在这ai与义肢早已稀疏平常，在美国新总统与AI的领导下，中美关系逐渐僵化的世界下，美国的一支机械化小队受命驻守于日本的广岛，在回去部队的路途中碰到了一位老人与两位孩子，老人热情的拿出自己亲手做的数字饼（1945）(一位胖胖的小孩，一位小男孩)在众人交谈时偷偷的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="核尘">
+<meta property="og:url" content="http://example.com/2023/04/16/%E6%A0%B8%E5%B0%98/index.html">
+<meta property="og:site_name" content="闪宝的快乐小屋">
+<meta property="og:description" content="核尘 [TOC]  那次事件后什么都变了，然而可怕的是，人性是不会变的。 ——  AI世界观前核子时代公元2035年1月1日，日本广岛午夜 在这ai与义肢早已稀疏平常，在美国新总统与AI的领导下，中美关系逐渐僵化的世界下，美国的一支机械化小队受命驻守于日本的广岛，在回去部队的路途中碰到了一位老人与两位孩子，老人热情的拿出自己亲手做的数字饼（1945）(一位胖胖的小孩，一位小男孩)在众人交谈时偷偷的">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2023-04-16T08:30:00.000Z">
+<meta property="article:modified_time" content="2023-05-10T12:05:47.907Z">
+<meta property="article:author" content="shan_bao">
+<meta property="article:tag" content="大纲">
+<meta property="article:tag" content="末世">
+<meta property="article:tag" content="ai">
+<meta property="article:tag" content="背叛">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/04/16/%E6%A0%B8%E5%B0%98/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '核尘',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-10 20:05:47'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
 
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-    if theme.reward.enable && theme.reward.QR_code
-      !=partial('includes/post/reward', {}, {cache: true})
-
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
-
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
-
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
-      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="闪宝的快乐小屋" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="闪宝的快乐小屋"><span class="site-name">闪宝的快乐小屋</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">核尘</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-04-16T08:30:00.000Z" title="Created 2023-04-16 16:30:00">2023-04-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-05-10T12:05:47.907Z" title="Updated 2023-05-10 20:05:47">2023-05-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%A0%B8%E5%B0%98/">核尘</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="核尘"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="核尘"><a href="#核尘" class="headerlink" title="核尘"></a>核尘</h1><h3 id=""><a href="#" class="headerlink" title=""></a></h3><hr>
+<p>[TOC]</p>
+<hr>
+<h3 id="那次事件后什么都变了，然而可怕的是，人性是不会变的。-——-AI"><a href="#那次事件后什么都变了，然而可怕的是，人性是不会变的。-——-AI" class="headerlink" title="那次事件后什么都变了，然而可怕的是，人性是不会变的。 ——  AI"></a>那次事件后什么都变了，然而可怕的是，人性是不会变的。 ——  AI</h3><h5 id="世界观"><a href="#世界观" class="headerlink" title="世界观"></a>世界观</h5><h6 id="前核子时代"><a href="#前核子时代" class="headerlink" title="前核子时代"></a>前核子时代</h6><p>公元2035年1月1日，日本广岛午夜 在这ai与义肢早已稀疏平常，在美国新总统与AI的领导下，中美关系逐渐僵化的世界下，美国的一支机械化小队受命驻守于日本的广岛，在回去部队的路途中碰到了一位老人与两位孩子，老人热情的拿出自己亲手做的数字饼（1945）(一位胖胖的小孩，一位小男孩)在众人交谈时偷偷的插上了一个奇怪的物体，在结束后老者默默的与孩子回去了</p>
+<p>公元2035年1月1日，美国雨夜，当众人正在熟睡时谁都不知道，美国总统（此时的总统是老者操控）又一次看向了那个摇曳的中的美国国旗，他不知这是否是对的 又一次看向了不能看向的那个按钮，最终 结束了这一切（it&#96;s never meet to be）真正的老者，打开了早已破损的烟盒，叼起了最后一支烟，孑然一身的看向飞来的核子武器 从此人类历史开始了新纪元，一个被后世叫做核子时代的丑陋时代。</p>
+<h6 id="核子时代（核元纪年法）"><a href="#核子时代（核元纪年法）" class="headerlink" title="核子时代（核元纪年法）"></a>核子时代（核元纪年法）</h6><p>在</p>
+<h5 id="大纲"><a href="#大纲" class="headerlink" title="大纲"></a>大纲</h5><h6 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h6><ol>
+<li>死刑犯男主在死刑的一刹那被救下，再一次被给予了生的渴望，参与了追寻核子武器的旅途</li>
+<li>众人来到大陆，刚刚出门的一瞬间就看见一群人不要命般的冲向92区，被无情的用枪械扫射致死，在野外中遇到了因为核战而流离失所的变异人·兽</li>
+<li>在人心涣散时，一位自称为H的少年拿出了一把枪向天空开了一枪逼迫人们去寻找核子武器</li>
+<li>众人来到了数据库，在迷宫中众人正准备杀死H时，突然间一位本该死亡的人来到了此处，“我必须阻止你们！核子武器绝不能交予你们手中！”“吾之名为人间道！！！”他将H护在身后，指出小队中的那些真正的来自地下城的叛徒</li>
+<li>之后在击败人间道后，被收缴住枪的H也被绑住逼问，H什么都没说，在众人准备杀死H时，众人才发现在人间道的基地中有一个秘密的小道需要瞳孔，众人把H带来，解锁了小道</li>
+<li>众人在小道后发现了一个数据库，上面储存着核子时代前的资料，在众人准备把这些资料上传到地下城结果发生了爆炸，整个基地岌岌可危，众人不得不返回</li>
+<li>在回来的路途中，众人看到了奄奄一息的H，与刚刚准备杀死他的皇家骑士团，在医师拿出枪逼退皇家骑士团后众人把H带走</li>
+<li>在出来后，H因为伤势过重在最后对医师交代一句后离开了人世，医师再次逼退了众人，并且为他做了个墓，在将他的必要物品拿走后站到了岩石高点“你们看不见吗，我们再一次成为了 死神，世界的毁灭者，如果我们把这些资料上传地下城，后果我们都明白，我们的后果也都明白，死！脚下的大陆的结局才过了5年呢！忘了！全忘了！”他再次拿出手枪“我以H的身份下达通知，所有人前往旧英国”</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">shan_bao</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2023/04/16/%E6%A0%B8%E5%B0%98/">http://example.com/2023/04/16/%E6%A0%B8%E5%B0%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%A7%E7%BA%B2/">大纲</a><a class="post-meta__tags" href="/tags/%E6%9C%AB%E4%B8%96/">末世</a><a class="post-meta__tags" href="/tags/ai/">ai</a><a class="post-meta__tags" href="/tags/%E8%83%8C%E5%8F%9B/">背叛</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/04/05/%E5%B9%BB%E6%A2%A6%E8%87%B3%E5%AE%9E/" title="幻梦至实"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">幻梦至实</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2023/04/05/%E5%B9%BB%E6%A2%A6%E8%87%B3%E5%AE%9E/" title="幻梦至实"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-05</div><div class="title">幻梦至实</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">shan_bao</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B8%E5%B0%98"><span class="toc-number">1.</span> <span class="toc-text">核尘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.0.1.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%A3%E6%AC%A1%E4%BA%8B%E4%BB%B6%E5%90%8E%E4%BB%80%E4%B9%88%E9%83%BD%E5%8F%98%E4%BA%86%EF%BC%8C%E7%84%B6%E8%80%8C%E5%8F%AF%E6%80%95%E7%9A%84%E6%98%AF%EF%BC%8C%E4%BA%BA%E6%80%A7%E6%98%AF%E4%B8%8D%E4%BC%9A%E5%8F%98%E7%9A%84%E3%80%82-%E2%80%94%E2%80%94-AI"><span class="toc-number">1.0.2.</span> <span class="toc-text">那次事件后什么都变了，然而可怕的是，人性是不会变的。 ——  AI</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%96%E7%95%8C%E8%A7%82"><span class="toc-number">1.0.2.0.1.</span> <span class="toc-text">世界观</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%89%8D%E6%A0%B8%E5%AD%90%E6%97%B6%E4%BB%A3"><span class="toc-number">1.0.2.0.1.1.</span> <span class="toc-text">前核子时代</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%A0%B8%E5%AD%90%E6%97%B6%E4%BB%A3%EF%BC%88%E6%A0%B8%E5%85%83%E7%BA%AA%E5%B9%B4%E6%B3%95%EF%BC%89"><span class="toc-number">1.0.2.0.1.2.</span> <span class="toc-text">核子时代（核元纪年法）</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%A7%E7%BA%B2"><span class="toc-number">1.0.2.0.2.</span> <span class="toc-text">大纲</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0"><span class="toc-number">1.0.2.0.2.1.</span> <span class="toc-text">第一章</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/16/%E6%A0%B8%E5%B0%98/" title="核尘">核尘</a><time datetime="2023-04-16T08:30:00.000Z" title="Created 2023-04-16 16:30:00">2023-04-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/05/%E5%B9%BB%E6%A2%A6%E8%87%B3%E5%AE%9E/" title="幻梦至实">幻梦至实</a><time datetime="2023-04-05T10:00:02.000Z" title="Created 2023-04-05 18:00:02">2023-04-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/05/Illusionary-Dreams/" title="Illusionary Dreams">Illusionary Dreams</a><time datetime="2023-04-05T06:35:08.000Z" title="Created 2023-04-05 14:35:08">2023-04-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/04/05/hello-world/" title="Hello World">Hello World</a><time datetime="2023-04-05T06:32:51.791Z" title="Created 2023-04-05 14:32:51">2023-04-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By shan_bao</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
