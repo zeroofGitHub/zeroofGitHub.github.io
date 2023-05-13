@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>shan</title>
+  <title>闪之宝·闪之宝库</title>
   
-  
+  <subtitle>闪之宝的秘密小屋</subtitle>
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
@@ -10,7 +10,7 @@
   <id>http://example.com/</id>
   
   <author>
-    <name>shan_bao</name>
+    <name>闪之宝</name>
     
   </author>
   
